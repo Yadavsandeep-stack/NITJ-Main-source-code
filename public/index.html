@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Favicon and title -->
+  <link rel="icon" type="image/x-icon" href="./public/assets/images/nitj-logo.png" />
+  <title>Dr. B.R. Ambedkar National Institute of Technology, Jalandhar</title>
+  <!-- Google Fonts  -->
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <!-- CSS linking -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="/css/magic.min.css">
+  <script src="./js/data.js" defer></script>
+  <style>
+    /* Customizing the Scrollbar */
+
+    .material-symbols-outlined {
+      font-variation-settings: "FILL" 0, "wght" 400, "grad" 0, "opzs" 48;
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-resizer {
+      background-color: #ffffff;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      border-radius: 10px;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: hsla(201, 96%, 26%);
+      border-radius: 10px;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #212121;
+    }
+
+    /* Gallery Effects */
+    .box {
+      flex: 1;
+      overflow: hidden;
+      transition: 0.5s;
+      line-height: 0;
+    }
+
+    .box>img {
+      width: 100%;
+      height: 100%;
+      border: 0.2rem solid white;
+      border-radius: 8px;
+      -o-object-fit: cover;
+      object-fit: cover;
+      transition: ease 0.75s;
+    }
+
+    .box:hover {
+      flex: 1 1 30%;
+      /* box-shadow: 0px 6px 6px rgba(73, 73, 73, 0.65); */
+      z-index: 1;
+      cursor: pointer;
+    }
+
+    .box:hover>img {
+      opacity: 1;
+      width: 100%;
+      height: 100%;
+    }
+
+    .base-image {
+      margin-top: 40px;
+      background-image: url("public/assets/images/nitj3.jpg"),
+        linear-gradient(rgb(255, 255, 255), rgba(4, 4, 4));
+      mask-image: linear-gradient(0deg, white, white, white, transparent);
+      -webkit-mask-image: linear-gradient(0deg,
+          white,
+          white,
+          white,
+          transparent);
+      background-color: #cccccc;
+      height: 400px;
+      background-position: 0% 28%;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .base-image-2 {
+      margin-top: 40px;
+      background-image: url("public/assets/images/nitj3.jpg"),
+        linear-gradient(rgb(255, 255, 255), rgba(4, 4, 4));
+      background-color: #cccccc;
+      height: 300px;
+      background-position: 58% 28%;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .main-shadow {
+      text-shadow: rgb(0 0 0) 6px -1px 5px;
+    }
+
+    .carousel-open:checked+.carousel-item {
+      position: static;
+      opacity: 100;
+    }
+
+    .carousel-item {
+      -webkit-transition: opacity 0.9s ease-in-out;
+      transition: opacity 1s ease-in-out 0.2s;
+    }
+
+    #carousel-1:checked~.control-1,
+    #carousel-2:checked~.control-2,
+    #carousel-3:checked~.control-3,
+    #carousel-4:checked~.control-4 {
+      display: block;
+    }
+
+    .carousel-indicators {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      bottom: 2%;
+      left: 0;
+      right: 0;
+      text-align: center;
+      z-index: 10;
+    }
+
+    #menu .menu-content ul li.selected a {
+      color: hsla(201, 96%, 26%);
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    #menu .menu-content .extra-links a.extra-selected {
+      font-weight: 600;
+      color: var(--dark);
+    }
+  </style>
+</head>
+
+<body class="font-body relative text-dark-purple scroll-smooth">
+  <script src="/template/header.js" type="module"></script>
+  <script src="/template/helper.js"></script>
+  <button id="scroll-to-top-button"
+    class="hidden z-30 opacity-60 hover:opacity-100 transition-all bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 rounded-full fixed right-0 bottom-0 mr-6 mb-6">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+      class="w-6 h-6">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l7.5-7.5 7.5 7.5m-15 6l7.5-7.5 7.5 7.5" />
+    </svg>
+  </button>
+  <div class="h-28 bg-accent w-full"></div>
+  <div id="main-image" class="min-h-[700px] h-screen max-h-[1000px] transition-all duration-1000 bg-cover bg-center">
+    <div class="bg-gradient-to-b from-accent to-transparent h-full w-full">
+      <div class="flex flex-col items-center justify-center container h-full">
+        <div class="flex flex-col gap-10">
+          <h2 class="uppercase text-white text-2xl lg:text-4xl text-center">
+            <span class="font-bold">NITJ</span> Welcomes you
+          </h2>
+          <div id="main-slider-text"
+            class="main-slider-text uppercase transition-all font-bold text-white hover:underline hover:decoration-white max-w-xl text-4xl sm:text-5xl text-center">
+            <!-- exit-animation -->
+            <!-- enter-animation -->
+          </div>
+        </div>
+
+
+        <div id="tiles" class="grid grid-cols-2 lg:flex mt-[10vh] gap-5 w-[90%] items-start">
+          <div
+            class="group transition delay-100 duration-300 hover:shadow-2xl hover:bg-sky-500 hover:shadow-sky-500 hover:scale-110 hidden lg:flex flex-col space-y-4 items-center justify-center max-w-xs lg:w-1/5 h-full px-3 py-5 bg-white shadow rounded-xl">
+            <a href="#news" class="flex flex-col space-y-4 items-center justify-center">
+              <span class="group-hover:text-white group-hover:animate-bounce animate-delay material-symbols-outlined"
+                style="font-size: 48px">
+                <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960"
+                  width="48">
+                  <path
+                    d="M140 936q-24.75 0-42.375-17.625T80 876V216l67 67 66-67 67 67 67-67 66 67 67-67 67 67 66-67 67 67 67-67 66 67 67-67v660q0 24.75-17.625 42.375T820 936H140Zm0-60h310V596H140v280Zm370 0h310V766H510v110Zm0-170h310V596H510v110ZM140 536h680V416H140v120Z" />
+                </svg>
+
+              </span>
+              <p
+                class="group-hover:text-white text-lg lg:text-xl whitespace-nowrap text-center text-dark-purple uppercase">
+                News
+              </p>
+            </a>
+          </div>
+          <div
+            class="group transition delay-100 duration-300 hover:shadow-2xl hover:bg-sky-500 hover:shadow-sky-500 hover:scale-110 flex flex-col space-y-4 items-center justify-center max-w-xs lg:w-1/5 h-full px-3 py-5 bg-white shadow rounded-xl">
+            <a href="#admission" class="flex flex-col space-y-4 items-center justify-center">
+              <span class="group-hover:text-white group-hover:animate-bounce animate-delay material-symbols-outlined"
+                style="font-size: 48px">
+                <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960"
+                  width="48">
+                  <path
+                    d="M479 936 189 777V537L40 456l439-240 441 240v317h-60V491l-91 46v240L479 936Zm0-308 315-172-315-169-313 169 313 172Zm0 240 230-127V573L479 696 249 571v170l230 127Zm1-240Zm-1 74Zm0 0Z" />
+                </svg>
+              </span>
+              <p
+                class="group-hover:text-white text-lg lg:text-xl whitespace-nowrap text-center text-dark-purple uppercase">
+                Programs
+              </p>
+            </a>
+          </div>
+          <div
+            class="group transition delay-100 duration-300 hover:shadow-2xl hover:bg-sky-500 hover:shadow-sky-500 hover:scale-110 flex flex-col space-y-4 items-center justify-center max-w-xs lg:w-1/5 h-full px-3 py-5 bg-white shadow rounded-xl">
+            <a href="#nitj-numbers" class="flex flex-col space-y-4 items-center justify-center">
+              <span class="group-hover:text-white group-hover:animate-bounce animate-delay material-symbols-outlined"
+                style="font-size: 48px">
+                <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960"
+                  width="48">
+                  <path
+                    d="M770 701V379L560 232 350 379v129h-60V349l270-193 270 193v352h-60ZM560 232Zm20 204h40v-40h-40v40Zm-80 0h40v-40h-40v40Zm80 80h40v-40h-40v40Zm-80 0h40v-40h-40v40Zm66 478-311-89v57H40V568h309l255 96q27 10 45.5 32.5T668 761h114q42 0 70 30t28 81v26l-314 96Zm-466-92h94V628h-94v274Zm462 30 256-78q-6-19-15-26t-21-7H575q-30 0-55.5-4T471 806l-81-25 22-58 73 24q25 8 47.5 11t71.5 3q0-12-4.5-23.5T584 721l-245-93h-84v214l307 90ZM194 765Zm410-4Zm-410 4Zm61 0Z" />
+                </svg>
+              </span>
+              <p
+                class="group-hover:text-white text-lg lg:text-xl whitespace-nowrap text-center text-dark-purple uppercase">
+                Placements
+              </p>
+            </a>
+          </div>
+
+          <div
+            class="group transition delay-100 duration-300 hover:shadow-2xl hover:bg-sky-500 hover:shadow-sky-500 hover:scale-110 flex flex-col space-y-4 items-center justify-center max-w-xs lg:w-1/5 h-full px-3 py-5 bg-white shadow rounded-xl">
+            <a href="#research" class="flex flex-col space-y-4 items-center justify-center">
+              <span class="group-hover:animate-shake animate-delay material-symbols-outlined" style="font-size: 48px">
+                stars
+              </span>
+              <!-- <span class="group-hover:text-white group-hover:animate-bounce animate-delay material-symbols-outlined"
+                style="font-size: 48px">
+                <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960"
+                  width="48">
+                  <path
+                    d="M200 936v-60h208V772h-15q-81 0-137-56t-56-137q0-61 35-111t92-70q4-40 35-65t72-22l-21-59 41-14.56L440 200l66-24 14 37 40-14 113 295-43 15 14 37-64 23-14-37-43 16-25-68q-15 17-35.5 24.5t-43.833 6.5Q393 510 371 495t-35-38q-35 17-55.5 49.965T260 579q0 55.417 38.792 94.208Q337.583 712 393 712h347v60H508v104h252v60H200Zm356-452 53-19-80-206-53 19 80 206Zm-130.175-23Q447 461 461.5 446.675q14.5-14.324 14.5-35.5Q476 390 461.675 375.5q-14.324-14.5-35.5-14.5Q405 361 390.5 375.325q-14.5 14.324-14.5 35.5Q376 432 390.325 446.5q14.324 14.5 35.5 14.5ZM556 484Zm-130-75Zm2 0Z" />
+                </svg>
+              </span> -->
+              <p
+                class="group-hover:text-white text-lg lg:text-xl whitespace-nowrap text-center text-dark-purple uppercase">
+                Achievements
+              </p>
+            </a>
+          </div>
+
+          <div
+            class="group transition delay-100 duration-300 hover:shadow-2xl hover:bg-sky-500 hover:shadow-sky-500 hover:scale-110 flex flex-col space-y-4 items-center justify-center max-w-xs lg:w-1/5 h-full px-3 py-5 bg-white shadow rounded-xl">
+            <a href="#campus-life" class="flex flex-col space-y-4 items-center justify-center">
+              <span class="group-hover:text-white group-hover:animate-bounce animate-delay material-symbols-outlined"
+                style="font-size: 48px">
+                <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960"
+                  width="48">
+                  <path
+                    d="m352 1050-50-30 128-218-82-49-75 121-50-30 229-371q-42-37-63-80.5T368 301q0-38 7.5-70t26.5-70l52 28q-14 29-20 54.5t-6 51.5q0 48 23 87t77 71l97 57q57 33 84.5 81.5T737 703q0 39-12 79t-32 76l-52-30q17-32 26.5-62.5T677 703q0-38-13-69.5T625 585l-273 465Zm285-608q-30 0-51.5-21.5T564 369q0-30 21.5-51.5T637 296q30 0 51.5 21.5T710 369q0 30-21.5 51.5T637 442Zm-94-186q-26 0-43-17t-17-43q0-26 17-43t43-17q26 0 43 17t17 43q0 26-17 43t-43 17Z" />
+                </svg>
+              </span>
+              <p
+                class="group-hover:text-white text-lg lg:text-xl whitespace-nowrap text-center text-dark-purple uppercase">
+                campus life
+              </p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- === Carousel section ends === -->
+  <!-- === News Section Starts === -->
+  <div id="news" class="my-20 scroll-mt-36">
+    <div class="container flex flex-col justify-start gap-10 lg:flex-row">
+      <div id="announcements" class="flex w-full lg:w-2/3 flex-col space-y-6">
+        <div class="flex items-center justify-start space-x-6 group">
+          <h1 class="uppercase text-3xl md:text-4xl font-semibold text-accent">
+            Latest <span class="text-dark-purple">Events</span>
+          </h1>
+          <span class="material-symbols-outlined group-hover:animate-shake animate-delay"
+            style="font-size: 40px; color: var(--accent)">
+            festival
+          </span>
+        </div>
+
+        <!-- Cards -->
+        <div class="flex flex-row relative">
+          <i class="hidden md:block absolute top-1/2 -left-10 -translate-y-1/2 fa-solid fa-angle-left self-center pl-4 text-2xl cursor-pointer"
+            onclick="slideCards(this,'left')"></i>
+          <div id="cards" class="scrollbar-hide flex space-x-6 overflow-x-scroll pl-1 pt-8 scroll-smooth h-[27rem]">
+            <!-- Data from API -->
+
+
+            <div id="card-template"
+              class="flex flex-col overflow-hidden rounded-xl bg-light-purple shadow-xl border-t-4 border-b-4 border-accent h-full w-60">
+              <div class="flex h-full w-full flex-col p-2.5">
+                <div class="h-44 basis-full w-full bg-slate-300 animate-pulse rounded-lg "></div>
+                <div class="flex flex-col p-4 basis-full">
+                  <div>
+                    <p class="w-[50%] h-5 rounded-lg bg-slate-300 animate-pulse">
+
+                    </p>
+                    <div class="space-y-1 mt-5">
+                      <p class="w-full h-5 rounded-lg animate-pulse bg-slate-300"></p>
+                      <p class="w-full h-5 rounded-lg animate-pulse bg-slate-300"></p>
+                      <p class="w-[80%] h-5 rounded-lg animate-pulse bg-slate-300"></p>
+                    </div>
+                  </div>
+                  <div class="pt-5 mt-auto whitespace-nowrap">
+                    <div class="bg-slate-300 animate-pulse w-[50%] h-5 rounded-lg"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="card-template"
+              class="flex flex-col overflow-hidden rounded-xl bg-light-purple shadow-xl border-t-4 border-b-4 border-accent h-full w-60">
+              <div class="flex h-full w-full flex-col p-2.5">
+                <div class="h-44 basis-full w-full bg-slate-300 animate-pulse rounded-lg "></div>
+                <div class="flex flex-col p-4 basis-full">
+                  <div>
+                    <p class="w-[50%] h-5 rounded-lg bg-slate-300 animate-pulse">
+
+                    </p>
+                    <div class="space-y-1 mt-5">
+                      <p class="w-full h-5 rounded-lg animate-pulse bg-slate-300"></p>
+                      <p class="w-full h-5 rounded-lg animate-pulse bg-slate-300"></p>
+                      <p class="w-[80%] h-5 rounded-lg animate-pulse bg-slate-300"></p>
+                    </div>
+                  </div>
+                  <div class="pt-5 mt-auto whitespace-nowrap">
+                    <div class="bg-slate-300 animate-pulse w-[50%] h-5 rounded-lg"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="card-template"
+              class="flex flex-col overflow-hidden rounded-xl bg-light-purple shadow-xl border-t-4 border-b-4 border-accent h-full w-60">
+              <div class="flex h-full w-full flex-col p-2.5">
+                <div class="h-44 basis-full w-full bg-slate-300 animate-pulse rounded-lg "></div>
+                <div class="flex flex-col p-4 basis-full">
+                  <div>
+                    <p class="w-[50%] h-5 rounded-lg bg-slate-300 animate-pulse">
+
+                    </p>
+                    <div class="space-y-1 mt-5">
+                      <p class="w-full h-5 rounded-lg animate-pulse bg-slate-300"></p>
+                      <p class="w-full h-5 rounded-lg animate-pulse bg-slate-300"></p>
+                      <p class="w-[80%] h-5 rounded-lg animate-pulse bg-slate-300"></p>
+                    </div>
+                  </div>
+                  <div class="pt-5 mt-auto whitespace-nowrap">
+                    <div class="bg-slate-300 animate-pulse w-[50%] h-5 rounded-lg"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <i class="hidden md:block fa-solid fa-angle-right self-center p-4 text-2xl cursor-pointer"
+            onclick="slideCards(this,'right')"></i>
+        </div>
+        <div class="flex items-end w-fit">
+          <a class="text-accent hover:text-sky-500 lg:mr-[80px]" href="/template/index.html?id=0?category=latestEvent">
+            <span class="font-semibold hover:underline">View All →</span>
+          </a>
+        </div>
+      </div>
+
+      <div id="notices" class="mx-auto flex grow lg:w-1/3 w-full flex-col">
+        <div class="flex items-center mb-6 justify-start space-x-6 group">
+          <h1 class="text-3xl md:text-4xl font-semibold uppercase text-gray-900">News</h1>
+          <span class="material-symbols-outlined text-xl group-hover:animate-shake animate-delay"
+            style="font-size: 40px; color: var(--accent)">
+            newspaper
+          </span>
+        </div>
+        <div class="flex flex-col space-y-4 py-6 px-2 overflow-scroll h-[29rem]" id="news-cards">
+          <!-- Data from the API -->
+          <!-- TODO : Add auto scrolling -->
+          <!-- TODO : Add loading state -->
+          <div id="news-card-template" class="rounded-xl p-4 shadow-md bg-slate-100">
+            <div class="flex flex-col items-start justify-start space-y-1 border-l-4 border-gray-800 pl-5">
+              <p class="w-full h-7 rounded-md bg-slate-400 animate-pulse"></p>
+              <div class="w-full space-y-1">
+                <p class="w-full h-4 rounded-md bg-slate-400 animate-pulse"></p>
+                <p class="w-[80%] h-4 rounded-md bg-slate-400 animate-pulse"></p>
+              </div>
+            </div>
+
+          </div>
+          <div id="news-card-template" class="rounded-xl p-4 shadow-md bg-slate-100">
+            <div class="flex flex-col items-start justify-start space-y-1 border-l-4 border-gray-800 pl-5">
+              <p class="w-full h-7 rounded-md bg-slate-400 animate-pulse"></p>
+              <div class="w-full space-y-1">
+                <p class="w-full h-4 rounded-md bg-slate-400 animate-pulse"></p>
+                <p class="w-[80%] h-4 rounded-md bg-slate-400 animate-pulse"></p>
+              </div>
+            </div>
+
+          </div>
+          <div id="news-card-template" class="rounded-xl p-4 shadow-md bg-slate-100">
+            <div class="flex flex-col items-start justify-start space-y-1 border-l-4 border-gray-800 pl-5">
+              <p class="w-full h-7 rounded-md bg-slate-400 animate-pulse"></p>
+              <div class="w-full space-y-1">
+                <p class="w-full h-4 rounded-md bg-slate-400 animate-pulse"></p>
+                <p class="w-[80%] h-4 rounded-md bg-slate-400 animate-pulse"></p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="flex items-end w-fit">
+          <a class="text-accent hover:text-sky-500 lg:mr-[80px]" href="/template/index.html?id=0?category=news">
+            <span class="font-semibold hover:underline">View All →</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- === News Section Ends === -->
+  <!-- === Directors message starts === -->
+
+  <div id="director-message" class="container mx-auto my-10">
+    <!-- Data from API -->
+    <div class="flex flex-col space-y-6 rounded-lg bg-slate-100 p-6 shadow-md md:flex-row md:space-y-0 md:space-x-6">
+      <div class="h-32 w-40 rounded-xl bg-slate-300 animate-pulse"></div>
+      <div id="content" class="flex flex-col space-y-4 w-full">
+        <div aria-hidden="true" class="flex space-x-4 items-center justify-start group">
+          <div class="bg-slate-300 animate-pulse rounded-lg w-full max-w-md h-10"></div>
+          <div class="bg-slate-300 h-10 w-10 animate-pulse rounded-lg"></div>
+        </div>
+        <div aria-hidden="true" class="bg-slate-300 animate-pulse rounded-lg w-full max-w-md h-5"></div>
+        <div aria-hidden="true" class="space-y-1">
+          <div class="bg-slate-300 animate-pulse rounded-lg w-full h-5"></div>
+          <div class="bg-slate-300 animate-pulse rounded-lg w-full h-5"></div>
+          <div class="bg-slate-300 animate-pulse rounded-lg w-[80%] h-5"></div>
+        </div>
+
+        <div aria-hidden="true" class="mt-auto bg-slate-300 animate-pulse rounded-lg w-14 h-4">
+          <div class="bg-slate-300 animate-pulse rounded-lg w-14 h-4"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- === Admission Section Starts === -->
+
+  <div id="admission" class="container mx-auto scroll-mt-32 my-20">
+    <div class="flex flex-col items-start justify-center lg:gap-5 gap-10 lg:flex-row">
+      <div id="programs" class="flex flex-col space-y-6 basis-1/3 w-full lg:w-auto">
+        <div id="title" class="mb-10 flex items-start justify-start space-x-6 group">
+          <h1 class="uppercase text-4xl font-semibold text-accent">
+            Be an <span class="text-dark-purple">Nitjian</span>
+          </h1>
+          <span class="group-hover:animate-shake animate-delay material-symbols-outlined self-center"
+            style="font-size: 40px; color: var(--accent)">
+            add_reaction
+          </span>
+        </div>
+        <div class="flex flex-col gap-5">
+          <a href="/admissions/index.html#btech">
+            <div
+              class="ring-2 ring-slate-300 px-8 py-5 rounded-lg flex-col flex hover:ring-accent hover:bg-light-purple hover:ring-4 transition-all">
+              <p class="text-3xl font-bold">B.Tech</p>
+              <p class="text-lg text-slate-500">Undergraduate Program</p>
+            </div>
+          </a>
+          <a href="/admissions/index.html#mtech">
+            <div
+              class="ring-2 ring-slate-300 px-8 py-5 rounded-lg flex-col flex hover:ring-accent hover:bg-light-purple hover:ring-4 transition-all">
+              <p class="text-3xl font-bold">M.Tech</p>
+              <p class="text-lg text-slate-500">Postgraduate Program</p>
+            </div>
+          </a>
+
+          <a href="/admissions/index.html#msc">
+            <div
+              class="ring-2 ring-slate-300 px-8 py-5 rounded-lg flex-col flex hover:ring-accent hover:bg-light-purple hover:ring-4 transition-all">
+              <p class="text-3xl font-bold">M.Sc, MBA</p>
+              <p class="text-lg text-slate-500">
+                Postgraduate Program
+              </p>
+            </div>
+          </a>
+          <a href="/admissions/index.html#phd">
+            <div
+              class="ring-2 ring-slate-300 px-8 py-5 rounded-lg flex-col flex hover:ring-accent hover:bg-light-purple hover:ring-4 transition-all">
+              <p class="text-3xl font-bold">Ph.D</p>
+              <p class="text-lg text-slate-500">Doctrate Program</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="flex flex-col space-y-6 basis-2/3">
+        <div id="title" class="mb-10 flex items-start justify-start space-x-6 group">
+          <h1 class="uppercase text-3xl sm:text-4xl font-semibold text-dark">
+            <span class="text-accent">Announcements & </span>Notices
+          </h1>
+          <span class="group-hover:animate-shake animate-delay material-symbols-outlined self-center"
+            style="font-size: 40px; color: var(--accent)">
+            crisis_alert
+          </span>
+        </div>
+        <div class="ring-2 ring-accent rounded-xl p-5 flex flex-col items-center justify-center gap-5">
+          <div class="flex items-stretch rounded-full ring-2 ring-accent overflow-x-auto">
+            <p data-notif="upcomingEvent"
+              class="notif-link cursor-pointer text-sm sm:text-base flex items-center justify-center text-center px-2 sm:px-6 py-1 rounded-full text-slate-400 font-semibold hover:bg-blue-50">
+              Upcoming Events
+            </p>
+            <p data-notif="notice"
+              class="notif-link cursor-pointer text-sm sm:text-base flex items-center justify-center text-center px-2 sm:px-6 py-1 rounded-full text-accent font-semibold bg-blue-100 hover:bg-blue-200">
+              Student's Corner
+            </p>
+            <p data-notif="tender"
+              class="notif-link cursor-pointer text-sm sm:text-base flex items-center justify-center text-center px-2 sm:px-6 py-1 rounded-full text-slate-400 font-semibold hover:bg-blue-50">
+              Tenders
+            </p>
+            <p data-notif="scholarship"
+            class="notif-link cursor-pointer text-sm sm:text-base flex items-center justify-center text-center px-2 sm:px-6 py-1 rounded-full text-slate-400 font-semibold hover:bg-blue-50">
+            Scholarships
+          </p>
+          </div>
+          <div class="w-full">
+            <div id="notice" class="w-full notice-content px-6  space-y-10 lg:mr-4 overflow-y-auto h-96">
+              <ul id="updates" class="w-full flex list-disc flex-col justify-between divide-y-2">
+
+              </ul>
+              <div class="bg-white sticky bottom-0 whitespace-nowrap pt-2 -ml-4 pl-4">
+
+                <a id="tab-view-all" class="text-accent hover:text-sky-500 lg:mr-[80px]" href="#">
+                  <span class="font-semibold">View All →</span>
+                </a>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Institute in Numbers section -->
+
+  <section id="nitj-numbers"
+    class="cursor-pointer my-6 scroll-mt-32 bg-[url('./public/assets/images/placementStats.jpg')] group bg-cover bg-fixed bg-center bg-no-repeat">
+    <div class="bg-dark-purple/70">
+      <div
+        class="container mx-auto flex flex-col space-y-12 md:px-10 px-4 py-10 md:flex-row md:items-center md:justify-between md:max-w-screen-xl md:space-y-0">
+        <div class="flex flex-col gap-4 w-fit justify-center items-start">
+          <h1 class="text-5xl font-bold uppercase text-white">
+            #numbers <br />
+            <span style="
+                    -webkit-text-stroke: 1px #ffffff !important;
+                    -webkit-text-fill-color: transparent;
+                  " class="inline-block">that prove</span>
+            NITJ
+          </h1>
+          <a href="https://ctp.nitj.ac.in/"
+            class="text-sm w-fit font-semibold text-gray-900 hover:text-white flex items-center bg-white hover:bg-transparent hover:ring-2 ring-white ring-inset px-4 py-2 rounded-lg transition">
+            <span class="text-base">Placement site &rarr;</span>
+          </a>
+
+
+        </div>
+        <div class="grid grid-cols-2 gap-10 text-white md:max-w-sm" id="placement-stats">
+          <!-- Data From API -->
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- === Research Section Starts === -->
+
+  <div id="research" class="my-20 scroll-mt-32">
+    <div class="container grid grid-cols-1 gap-5 md:grid-cols-3">
+      <div id="announcements" class="md:col-start-1 md:col-end-3 row-span-2 flex flex-col space-y-6">
+        <div class="flex items-center justify-start space-x-6 group">
+          <h1 class="uppercase text-3xl md:text-4xl font-semibold text-accent">
+            Current <span class="text-dark-purple">Achievements</span>
+          </h1>
+          <span class="group-hover:animate-shake animate-delay material-symbols-outlined"
+            style="font-size: 40px; color: var(--accent)">
+            stars
+          </span>
+        </div>
+
+        <!-- Cards -->
+        <div class="flex flex-row relative">
+          <i class="hidden md:block absolute top-1/2 -left-10 -translate-y-1/2 fa-solid fa-angle-left self-center pl-4 text-2xl cursor-pointer"
+            onclick="slideCards(this,'left')"></i>
+          <div id="slides" class="scrollbar-hide flex space-x-6 overflow-x-scroll pl-1 pt-8 scroll-smooth h-[25rem]">
+            <!-- Data from API -->
+            <div id="card-template"
+              class="flex flex-col overflow-hidden rounded-xl bg-light-purple shadow-xl border-t-4 border-b-4 border-accent h-full w-60">
+              <div class="flex h-full w-full flex-col p-2.5">
+                <div class="h-44 basis-full w-full bg-slate-300 animate-pulse rounded-lg "></div>
+                <div class="flex flex-col p-4 basis-full">
+                  <div>
+                    <p class="w-[50%] h-5 rounded-lg bg-slate-300 animate-pulse">
+
+                    </p>
+                    <div class="space-y-1 mt-5">
+                      <p class="w-full h-5 rounded-lg animate-pulse bg-slate-300"></p>
+                      <p class="w-full h-5 rounded-lg animate-pulse bg-slate-300"></p>
+                      <p class="w-full h-5 rounded-lg animate-pulse bg-slate-300"></p>
+                    </div>
+                  </div>
+                  <div class="pt-5 mt-auto whitespace-nowrap">
+                    <div class="bg-slate-300 animate-pulse w-[50%] h-5 rounded-lg"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="card-template"
+              class="flex flex-col overflow-hidden rounded-xl bg-light-purple shadow-xl border-t-4 border-b-4 border-accent h-full w-60">
+              <div class="flex h-full w-full flex-col p-2.5">
+                <div class="h-44 basis-full w-full bg-slate-300 animate-pulse rounded-lg "></div>
+                <div class="flex flex-col p-4 basis-full">
+                  <div>
+                    <p class="w-[50%] h-5 rounded-lg bg-slate-300 animate-pulse">
+
+                    </p>
+                    <div class="space-y-1 mt-5">
+                      <p class="w-full h-5 rounded-lg animate-pulse bg-slate-300"></p>
+                      <p class="w-full h-5 rounded-lg animate-pulse bg-slate-300"></p>
+                      <p class="w-full h-5 rounded-lg animate-pulse bg-slate-300"></p>
+                    </div>
+                  </div>
+                  <div class="pt-5 mt-auto whitespace-nowrap">
+                    <div class="bg-slate-300 animate-pulse w-[50%] h-5 rounded-lg"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="card-template"
+              class="flex flex-col overflow-hidden rounded-xl bg-light-purple shadow-xl border-t-4 border-b-4 border-accent h-full w-60">
+              <div class="flex h-full w-full flex-col p-2.5">
+                <div class="h-44 basis-full w-full bg-slate-300 animate-pulse rounded-lg "></div>
+                <div class="flex flex-col p-4 basis-full">
+                  <div>
+                    <p class="w-[50%] h-5 rounded-lg bg-slate-300 animate-pulse">
+
+                    </p>
+                    <div class="space-y-1 mt-5">
+                      <p class="w-full h-5 rounded-lg animate-pulse bg-slate-300"></p>
+                      <p class="w-full h-5 rounded-lg animate-pulse bg-slate-300"></p>
+                      <p class="w-full h-5 rounded-lg animate-pulse bg-slate-300"></p>
+                    </div>
+                  </div>
+                  <div class="pt-5 mt-auto whitespace-nowrap">
+                    <div class="bg-slate-300 animate-pulse w-[50%] h-5 rounded-lg"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <i class="hidden md:block fa-solid fa-angle-right self-center p-4 text-2xl cursor-pointer"
+            onclick="slideCards(this,'right')"></i>
+        </div>
+        <div class="grid grid-cols-1 grid-rows-1 md:col-start-1 md:col-end-3 md:row-start-3 md:mr-6 bg-white">
+          <a href="https://www.nitj.ac.in/template/index.html?id=64bf68ff2325112eba21be22?category=newpage"
+            class="text-sm w-fit font-semibold text-white hover:text-accent flex items-center bg-accent hover:bg-transparent hover:ring-2 ring-accent ring-inset px-4 py-2 rounded-lg transition">
+            <span class="text-base">View more Achievements →</span>
+          </a>
+          <!-- <a class="text-accent hover:text-sky-500 lg:mr-[80px]"
+            href="https://www.nitj.ac.in/template/index.html?id=64bf68ff2325112eba21be22?category=newpage">
+            <span class="font-semibold hover:underline">View more Achievements →</span>
+          </a> -->
+        </div>
+      </div>
+
+      <div title="Alumni Site" id="testimonial"
+        class="grid grid-cols-1 grid-rows-1 md:col-start-1 md:col-end-3 md:row-start-3 md:mr-6 bg-white">
+        <!-- Data from API -->
+
+        <div
+          class="col-start-1 row-start-1 col-end-2 row-end-2 md:mr-6 bg-slate-100 rounded-lg flex flex-col md:flex-row p-5 gap-5">
+          <div class="bg-slate-300 animate-pulse rounded-md h-28 w-28"></div>
+          <div class="text-xl w-full flex flex-col gap-5">
+            <div class="text-xl flex flex-col gap-5">
+              <div class="space-y-1">
+                <p class="w-full h-5 rounded-lg animate-pulse bg-slate-300"></p>
+                <p class="w-full h-5 rounded-lg animate-pulse bg-slate-300"></p>
+                <p class="w-[80%] h-5 rounded-lg animate-pulse bg-slate-300"></p>
+              </div>
+              <div class="space-y-1">
+                <p class="w-20 h-5 rounded-lg animate-pulse bg-slate-300"></p>
+                <p class="w-36 h-5 rounded-lg animate-pulse bg-slate-300"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <!-- <div class="card-container">
+          <div class="card">
+            <div class="card-contents card-front">
+              <div class="card-depth" id="testimonial">
+
+              </div>
+              <div class="card-contents card-back">
+                <div class="card-depth">
+
+                </div>
+              </div>
+            </div>
+          </div> -->
+      </div>
+      <div id="publications"
+        class="h-full md:col-start-3 md:col-end-4 row-span-3 py-3 px-8 h-fit border-accent border-t-4 bg-light-purple border-b-4 rounded-lg">
+        <div class="flex flex-col gap-3 mb-8">
+          <div class="flex items-center justify-start space-x-6 group">
+            <h1 class="uppercase text-4xl font-semibold">Publications</h1>
+            <span class="material-symbols-outlined group-hover:animate-shake animate-delay hidden lg:block"
+              style="font-size: 40px; color: var(--accent)">
+              local_library
+            </span>
+          </div>
+          <a class="text-accent hover:text-sky-500 lg:mr-[80px]" href="https://www.nitj.ac.in/template/index.html?id=64d0d8abed9a6e3506b3df6b?category=newpage">
+            <span class="font-semibold hover:underline">View All →</span>
+          </a>
+        </div>
+
+        <div class="h-[35rem] flex rounded-xl flex-col overflow-scroll divide-y-2 divide-gray-300"
+          id="publication-cards">
+          <!-- Data from API -->
+          <div>
+            <div id="publication-card" class="w-full flex flex-col py-2">
+              <div>
+                <div>
+                  <p class="w-[90%] h-5 rounded-lg animate-pulse bg-slate-300"></p>
+                  &nbsp;
+                  <div class="space-y-1">
+                    <p class="w-[95%] h-5 rounded-lg animate-pulse bg-slate-300"></p>
+                    <p class="w-[95%] h-5 rounded-lg animate-pulse bg-slate-300"></p>
+                    <p class="w-[70%] h-5 rounded-lg animate-pulse bg-slate-300"></p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div>
+            <div id="publication-card" class="w-full flex flex-col py-2">
+              <div>
+                <div>
+                  <p class="w-[90%] h-5 rounded-lg animate-pulse bg-slate-300"></p>
+                  &nbsp;
+                  <div class="space-y-1">
+                    <p class="w-[95%] h-5 rounded-lg animate-pulse bg-slate-300"></p>
+                    <p class="w-[95%] h-5 rounded-lg animate-pulse bg-slate-300"></p>
+                    <p class="w-[70%] h-5 rounded-lg animate-pulse bg-slate-300"></p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div>
+            <div id="publication-card" class="w-full flex flex-col py-2">
+              <div>
+                <div>
+                  <p class="w-[90%] h-5 rounded-lg animate-pulse bg-slate-300"></p>
+                  &nbsp;
+                  <div class="space-y-1">
+                    <p class="w-[95%] h-5 rounded-lg animate-pulse bg-slate-300"></p>
+                    <p class="w-[95%] h-5 rounded-lg animate-pulse bg-slate-300"></p>
+                    <p class="w-[70%] h-5 rounded-lg animate-pulse bg-slate-300"></p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div>
+            <div id="publication-card" class="w-full flex flex-col py-2">
+              <div>
+                <div>
+                  <p class="w-[90%] h-5 rounded-lg animate-pulse bg-slate-300"></p>
+                  &nbsp;
+                  <div class="space-y-1">
+                    <p class="w-[95%] h-5 rounded-lg animate-pulse bg-slate-300"></p>
+                    <p class="w-[95%] h-5 rounded-lg animate-pulse bg-slate-300"></p>
+                    <p class="w-[70%] h-5 rounded-lg animate-pulse bg-slate-300"></p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div>
+            <div id="publication-card" class="w-full flex flex-col py-2">
+              <div>
+                <div>
+                  <p class="w-[90%] h-5 rounded-lg animate-pulse bg-slate-300"></p>
+                  &nbsp;
+                  <div class="space-y-1">
+                    <p class="w-[95%] h-5 rounded-lg animate-pulse bg-slate-300"></p>
+                    <p class="w-[95%] h-5 rounded-lg animate-pulse bg-slate-300"></p>
+                    <p class="w-[70%] h-5 rounded-lg animate-pulse bg-slate-300"></p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- === Research Section Ends === -->
+  <!-- === Placement Stats starts === -->
+  <section id="institute-numbers"
+    class="scroll-mt-32 my-6 bg-[url('./public/assets/images/numbers_section.jpg')] group bg-cover bg-fixed bg-center bg-no-repeat">
+    <div class="bg-dark-purple/70">
+      <div
+        class="container mx-auto flex flex-col space-y-12 md:px-10 px-4 py-10 md:flex-row-reverse md:items-center md:justify-between md:max-w-screen-xl md:space-y-0">
+        <h1 class="text-5xl font-bold uppercase text-white md:text-right">
+          #Numbers <br />
+          <span style="
+                -webkit-text-stroke: 1px #ffffff !important;
+                -webkit-text-fill-color: transparent;
+              " class="inline-block">that makes</span>
+          NITJ
+        </h1>
+        <div class="grid grid-cols-2 gap-10 text-white md:max-w-sm" id="stats">
+          <div class="number-in">
+            <h1 class="text-5xl font-bold uppercase"><span>5000</span>+</h1>
+            <p class="text-lg uppercase">Students</p>
+          </div>
+          <div class="number-in">
+            <h1 class="text-5xl font-bold uppercase"><span>500</span>+</h1>
+            <p class="text-lg uppercase">Faculty & Staff</p>
+          </div>
+          <div class="number-in">
+            <h1 class="text-5xl font-bold uppercase"><span>18</span></h1>
+            <p class="text-lg uppercase">Departments</p>
+          </div>
+          <div class="number-in">
+            <h1 class="text-5xl font-bold uppercase"><span>20</span>+</h1>
+            <p class="text-lg uppercase">Clubs & Cells</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- === LIFE AT NITJ Starts === -->
+  <div id="campus-life" class="container my-20 scroll-mt-32">
+    <div class="flex flex-col gap-10 lg:flex-row">
+      <div class="basis-2/5">
+        <div class="mb-10 flex items-center justify-start space-x-6 group">
+          <h1 class="uppercase text-4xl font-semibold w-fit text-accent">
+            Clubs & <span class="text-dark-purple">Societies</span>
+          </h1>
+          <span class="material-symbols-outlined group-hover:animate-shake animate-delay"
+            style="font-size: 40px; color: var(--accent)">
+            diversity_2
+          </span>
+        </div>
+        <div class="flex items-center rounded-xl bg-light-purple p-2">
+          <div id="clubs-and-socs-container" class="h-[65vh] w-full overflow-auto rounded-lg p-2">
+            <div id="clubs-and-socs" class="flex w-full flex-col gap-6">
+              <!-- skeleton loading template -->
+              <div aria-hidden="true" id="club-card" class="overflow-hidden rounded-xl bg-white shadow-lg">
+                <div class="flex w-full flex-col items-stretch justify-start sm:flex-row">
+                  <div class="w-2/5 bg-slate-300 animate-pulse bg-cover bg-center">
+                  </div>
+                  <div class="flex flex-col p-6 w-full sm:w-3/5">
+                    <div class="flex flex-col items-start justify-start space-y-3">
+                      <div class="rounded-md animate-pulse bg-slate-300 mt-2 h-8 w-1/2"></div>
+                      <div class="rounded-md animate-pulse bg-slate-300 mt-2 h-5 w-full"></div>
+                      <div class="space-y-1 w-full">
+                        <div class="rounded-md animate-pulse bg-slate-300 mt-2 h-3 w-full"></div>
+                        <div class="rounded-md animate-pulse bg-slate-300 mt-2 h-3 w-full"></div>
+                        <div class="rounded-md animate-pulse bg-slate-300 mt-2 h-3 w-[80%]"></div>
+                      </div>
+                    </div>
+                    <div class="mt-5 flex items-center justify-start space-x-3">
+                      <div class="rounded-md animate-pulse bg-slate-300 mt-2 h-4 w-1/2"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div aria-hidden="true" id="club-card" class="overflow-hidden rounded-xl bg-white shadow-lg">
+                <div class="flex w-full flex-col items-stretch justify-start sm:flex-row">
+                  <div class="w-2/5 bg-slate-300 animate-pulse bg-cover bg-center">
+                  </div>
+                  <div class="flex flex-col p-6 w-full sm:w-3/5">
+                    <div class="flex flex-col items-start justify-start space-y-3">
+                      <div class="rounded-md animate-pulse bg-slate-300 mt-2 h-8 w-1/2"></div>
+                      <div class="rounded-md animate-pulse bg-slate-300 mt-2 h-5 w-full"></div>
+                      <div class="space-y-1 w-full">
+                        <div class="rounded-md animate-pulse bg-slate-300 mt-2 h-3 w-full"></div>
+                        <div class="rounded-md animate-pulse bg-slate-300 mt-2 h-3 w-full"></div>
+                        <div class="rounded-md animate-pulse bg-slate-300 mt-2 h-3 w-[80%]"></div>
+                      </div>
+                    </div>
+                    <div class="mt-5 flex items-center justify-start space-x-3">
+                      <div class="rounded-md animate-pulse bg-slate-300 mt-2 h-4 w-1/2"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div aria-hidden="true" id="club-card" class="overflow-hidden rounded-xl bg-white shadow-lg">
+                <div class="flex w-full flex-col items-stretch justify-start sm:flex-row">
+                  <div class="w-2/5 bg-slate-300 animate-pulse bg-cover bg-center">
+                  </div>
+                  <div class="flex flex-col p-6 w-full sm:w-3/5">
+                    <div class="flex flex-col items-start justify-start space-y-3">
+                      <div class="rounded-md animate-pulse bg-slate-300 mt-2 h-8 w-1/2"></div>
+                      <div class="rounded-md animate-pulse bg-slate-300 mt-2 h-5 w-full"></div>
+                      <div class="space-y-1 w-full">
+                        <div class="rounded-md animate-pulse bg-slate-300 mt-2 h-3 w-full"></div>
+                        <div class="rounded-md animate-pulse bg-slate-300 mt-2 h-3 w-full"></div>
+                        <div class="rounded-md animate-pulse bg-slate-300 mt-2 h-3 w-[80%]"></div>
+                      </div>
+                    </div>
+                    <div class="mt-5 flex items-center justify-start space-x-3">
+                      <div class="rounded-md animate-pulse bg-slate-300 mt-2 h-4 w-1/2"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <!-- 
+                
+              <div id="club-card" class="overflow-hidden rounded-xl bg-white shadow-lg">
+                <div class="flex w-full flex-col items-stretch justify-start sm:flex-row">
+                  <div class="w-2/5 bg-[url(./public/assets/images/rtist_logo.png)] bg-cover bg-center bg-no-repeat">
+                  </div>
+                  <div class="flex flex-col p-6 w-full sm:w-3/5">
+                    <div class="flex flex-col items-start justify-start space-y-3">
+                      <h4 class="text-2xl font-bold uppercase">RTist</h4>
+                      <div
+                        class="flex items-start justify-start rounded-full border-2 border-green-500 bg-green-100 px-2 py-0.5 mt-2">
+                        <p class="text-xs font-bold uppercase text-green-500">
+                          Robotics Club
+                        </p>
+                      </div>
+                      <p class="line-clamp-3 leading-5">
+                        The club is all about robotics. This club serves as a
+                        platform for students to enhance their robotic skills
+                        and contribute for the development of the college.
+                      </p>
+                    </div>
+                    <div class="mt-5 flex items-center justify-start space-x-3">
+                      <a class="uppercase cursor-pointer font-semibold text-sm text-sky-500">Learn more
+                        <span>&rarr;</span></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="club-card" class="overflow-hidden rounded-xl bg-white shadow-lg">
+                <div class="flex w-full flex-col items-stretch justify-start sm:flex-row">
+                  <div class="w-2/5 bg-[url(./public/assets/images/DSC_Logo.svg)] bg-cover bg-center bg-no-repeat">
+                  </div>
+                  <div class="flex flex-col p-6 w-full sm:w-3/5">
+                    <div class="flex flex-col items-start justify-start space-y-3">
+                      <h4 class="text-2xl font-bold uppercase">Criminalz Crew</h4>
+                      <div
+                        class="flex items-start justify-start rounded-full border-2 border-lime-500 bg-lime-100 px-2 py-0.5 mt-2">
+                        <p class="text-xs font-bold uppercase text-lime-500">Dance Club</p>
+                      </div>
+                      <p class="line-clamp-3 leading-5">The club is all about robotics. This club serves as a platform
+                        for students to enhance their robotic skills and contribute for the development of the
+                        college.
+                      </p>
+                    </div>
+                    <div class="mt-5 flex items-center justify-start space-x-3">
+                      <a class="uppercase cursor-pointer font-semibold text-sm text-sky-500">Learn more
+                        <span>&rarr;</span></a>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+              <!-- <div id="club-card" class="overflow-hidden rounded-xl bg-white shadow-lg">
+                <div class="flex w-full flex-col items-stretch justify-start sm:flex-row">
+                  <div
+                    class="w-2/5 bg-[url(./public/assets/images/mediacell_logo.png)] bg-cover bg-center bg-no-repeat">
+                  </div>
+                  <div class="flex flex-col p-6 w-full sm:w-3/5">
+                    <div class="flex flex-col items-start justify-start space-y-3">
+                      <h4 class="text-2xl font-bold uppercase">Mediacell</h4>
+                      <div
+                        class="flex items-start justify-start rounded-full border-2 border-red-500 bg-red-100 px-2 py-0.5 mt-2">
+                        <p class="text-xs font-bold uppercase text-red-500">Reporting Club</p>
+                      </div>
+                      <p class="line-clamp-3 leading-5">The club is all about robotics. This club serves as a platform
+                        for students to enhance their robotic skills and contribute for the development of the
+                        college.
+                      </p>
+                    </div>
+                    <div class="mt-5 flex items-center justify-start space-x-3">
+                      <a class="uppercase cursor-pointer font-semibold text-sm text-sky-500">Learn more
+                        <span>&rarr;</span></a>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+        <!-- <div class="flex items-end w-fit m-2 ml-4">
+          <a class="text-accent hover:text-sky-500 lg:mr-[80px]" href="#">
+            <span class="font-semibold hover:underline">View All →</span>
+          </a>
+        </div> -->
+      </div>
+
+      <div class="basis-3/5">
+        <div id="gallery">
+          <div class="mb-10 flex items-center justify-start space-x-6 group">
+            <h1 class="uppercase text-4xl font-semibold text-accent">
+              Photo <span class="text-dark-purple">Gallery</span>
+            </h1>
+            <span class="material-symbols-outlined group-hover:animate-shake animate-delay"
+              style="font-size: 40px; color: var(--accent)">
+              imagesmode
+            </span>
+          </div>
+          <!-- images from API -->
+          <div id="gallery-loading-template" class="space-y-2 overflow-hidden">
+            <div class="flex h-[22vh] w-full gap-2">
+              <div class="bg-slate-300 animate-pulse rounded-md w-full"></div>
+              <div class="bg-slate-300 animate-pulse rounded-md w-full"></div>
+              <div class="bg-slate-300 animate-pulse rounded-md w-full"></div>
+              <div class="bg-slate-300 animate-pulse rounded-md w-full"></div>
+            </div>
+            <div class="flex h-[22vh] w-full gap-2">
+              <div class="bg-slate-300 animate-pulse rounded-md w-full"></div>
+              <div class="bg-slate-300 animate-pulse rounded-md w-full"></div>
+              <div class="bg-slate-300 animate-pulse rounded-md w-full"></div>
+              <div class="bg-slate-300 animate-pulse rounded-md w-full"></div>
+            </div>
+            <div class="flex h-[22vh] w-full gap-2">
+              <div class="bg-slate-300 animate-pulse rounded-md w-full"></div>
+              <div class="bg-slate-300 animate-pulse rounded-md w-full"></div>
+              <div class="bg-slate-300 animate-pulse rounded-md w-full"></div>
+              <div class="bg-slate-300 animate-pulse rounded-md w-full"></div>
+            </div>
+          </div>
+        </div>
+        <div class="m-[auto] mt-[15px] flex flex-col items-center gap-[15px] lg:flex-row">
+          <span class="text-accent-orange sr-only">Photo Gallery</span>
+          <a class=" text-accent hover:text-sky-500 lg:mr-[80px]" href="/admin/explore.html">
+            <i class="fas fa-camera-alt mr-[6px] text-[24px] text-accent"></i>
+            <span class="font-semibold hover:underline">View Gallery →</span>
+          </a>
+          <a class="text-accent hover:text-sky-500" href="/admin/virtualtour.html">
+            <i class="fas fa-street-view mr-[6px] text-[24px] text-accent"></i>
+            <span class="font-semibold hover:underline">Campus Tour →</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="big-viewer" class="fixed top-0 w-full flex place-content-center backdrop-blur-md h-screen hidden z-50">
+    <div id="crossbutton" class="absolute w-full z-50 flex justify-end py-4 px-4 h-fit hidden cursor-pointer">
+      <div class="line bg-black w-[20px] h-[2px] rotate-45 absolute"></div>
+      <div class="line bg-black w-[20px] h-[2px] -rotate-45"></div>
+    </div>
+    <div class="flex-row flex space-x-4 w-full z-10 h-full items-center place-content-center">
+      <span id="arrow_back" class="material-symbols-outlined hidden cursor-pointer z-50">
+        arrow_back_ios
+      </span>
+      <img id="sample-img" class="w-4/6 rounded-md shadow-lg z-10 hidden" src="">
+      <span id="arrow_forward" class="material-symbols-outlined hidden cursor-pointer z-50">
+        arrow_forward_ios
+      </span>
+    </div>
+  </div>
+
+  <div class="base-image hidden overflow-hidden lg:block"></div>
+  <!-- === LIFE AT NITJ Ends === -->
+
+
+  <script src="https://unpkg.com/@popperjs/core@2.9.1/dist/umd/popper.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    var slideIndex = 0;
+    carousel();
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > x.length) {
+        slideIndex = 1;
+      }
+      x[slideIndex - 1].style.display = "block";
+      setTimeout(carousel, 2500);
+    }
+    var tooltipTriggerList = [].slice.call(
+      document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    );
+    // var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    //   return new Tooltip(tooltipTriggerEl);
+    // });
+    function slideCards(e, direction) {
+      // var container = document.getElementById('cards')
+      const container = e.parentNode.querySelector('div')
+      scrollCompleted = 0
+      var slideVar = setInterval(function () {
+        if (direction == 'left') {
+          container.scrollLeft -= container.clientWidth
+        } else {
+          container.scrollLeft += container.clientWidth
+        }
+        scrollCompleted += 100
+        if (scrollCompleted >= 1000) {
+          window.clearInterval(slideVar)
+        }
+      }, 2)
+    }
+  </script>
+
+  <script type="module" src="/js/app.js"></script>
+  <!-- <script type="module" src="./js/navbar.js"></script> -->
+  <script src="/js/footer.js"></script>
+  <script src="/template/footer.js"></script>
+  <script src="/template/helper.js"></script>
+  <!-- <script type="module" src="./js/navbar-mobile.js"></script> -->
+
+</html>
